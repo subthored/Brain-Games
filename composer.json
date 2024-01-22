@@ -2,6 +2,7 @@
     "name": "hexlet/code",
     "description": "First_project",
     "type": "project",
+    "license": "LGPL-3.0-or-later",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
@@ -13,5 +14,8 @@
             "email": "janiqgames@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "bin": [
+    	"bin/brain-games"
+    ]
 }
