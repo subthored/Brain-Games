@@ -9,7 +9,9 @@
         },
         "files": [
             "src/Cli.php",
-            "src/brain-even-logic.php"
+            "src/Engine.php",
+            "src/Games-logic/brain-even-logic.php",
+            "src/Games-logic/brain-calc-logic.php"
         ]
     },
     "authors": [
