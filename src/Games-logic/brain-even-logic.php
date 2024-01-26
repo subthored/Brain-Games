@@ -6,7 +6,8 @@ use function cli\prompt;
 function evenGame()
 {
     // Initializing starting variables
-    $points = (int) 0;
+    $points = 0;
+    $maxPoints = 3;
     $isUserCorrect = true;
 
     // Greeting
@@ -14,7 +15,7 @@ function evenGame()
     line("Answer 'yes' if the number is even, otherwise answer 'no'.\n");
 
     // Game logic
-    while ($isUserCorrect === true && $points !== 3) {
+    while ($isUserCorrect && $points < $maxPoints) {
         // Set a random number
         $number = random_int(1, 100);
         $correctAnswer = ($number % 2 === 0) ? 'yes' : 'no';
@@ -25,13 +26,13 @@ function evenGame()
         $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
 
         // Adding points
-        if ($isUserCorrect === true) {
+        if ($isUserCorrect) {
             line("Correct!\n");
             $points++;
         }
 
         // Win message
-        if ($points === 3) {
+        if ($points === $maxPoints) {
             line("Congratulations, %s!", $name);
         }
     }
