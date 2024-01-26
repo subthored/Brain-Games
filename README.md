@@ -6,3 +6,6 @@
 
 ### Asciinema of BrainEven game:
 [![asciicast](https://asciinema.org/a/V9ym56ueSYGl0ZDLGssGs9ObN.svg)](https://asciinema.org/a/V9ym56ueSYGl0ZDLGssGs9ObN)
+
+### Asciinema of BrainCalc game:
+[![asciicast](https://asciinema.org/a/jiMVBBK66wpbAQYR2tGs6MqeB.svg)](https://asciinema.org/a/jiMVBBK66wpbAQYR2tGs6MqeB)
