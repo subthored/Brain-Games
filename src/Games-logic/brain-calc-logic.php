@@ -15,7 +15,7 @@ function calcGame()
     line("\nWhat is the result of the expression?");
 
     // Game logic
-    while ($isUserCorrect === true && $points !== 3) {
+    while ($isUserCorrect && $points < $maxPoints) {
         $expression = random_int(1, 3);
         $firstNumber = random_int(1, 50);
         $secondNumber = ($expression === 3) ? random_int(1, 10) : random_int(1, 50);
