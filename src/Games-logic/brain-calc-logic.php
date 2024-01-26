@@ -7,6 +7,7 @@ function calcGame()
 {
     // Initializing starting variables
     $points = 0;
+    $maxPoints = 3;
     $isUserCorrect = true;
 
     // Greeting
@@ -16,24 +17,20 @@ function calcGame()
     // Game logic
     while ($isUserCorrect === true && $points !== 3) {
         $expression = random_int(1, 3);
+        $firstNumber = random_int(1, 50);
+        $secondNumber = ($expression === 3) ? random_int(1, 10) : random_int(1, 50);
 
         // Defining an expression
         switch ($expression) {
             case 1:
-                $firstNumber = random_int(1, 50);
-                $secondNumber = random_int(1, 50);
                 $correctAnswer = $firstNumber + $secondNumber;
                 $expression = "+";
                 break;
             case 2:
-                $firstNumber = random_int(1, 50);
-                $secondNumber = random_int(1, 50);
                 $correctAnswer = $firstNumber - $secondNumber;
                 $expression = "-";
                 break;
             case 3:
-                $firstNumber = random_int(1, 50);
-                $secondNumber = random_int(1, 10);
                 $correctAnswer = $firstNumber * $secondNumber;
                 $expression = "*";
                 break;
@@ -48,13 +45,13 @@ function calcGame()
         $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
 
         // Adding point
-        if ($isUserCorrect === true) {
+        if ($isUserCorrect) {
             line("Correct!\n");
             $points++;
         }
 
         // Win message
-        if ($points === 3) {
+        if ($points === $maxPoints) {
             line("Congratulations, %s!", $name);
         }
     }
