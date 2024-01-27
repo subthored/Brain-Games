@@ -11,8 +11,7 @@ function calcGame()
     $isUserCorrect = true;
 
     // Greeting
-    $name = gameGreeting();
-    line("\nWhat is the result of the expression?");
+    $name = gameGreeting("calc");
 
     // Game logic
     while ($isUserCorrect && $points < $maxPoints) {
