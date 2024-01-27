@@ -11,8 +11,7 @@ function evenGame()
     $isUserCorrect = true;
 
     // Greeting
-    $name = gameGreeting();
-    line("Answer 'yes' if the number is even, otherwise answer 'no'.\n");
+    $name = gameGreeting("even");
 
     // Game logic
     while ($isUserCorrect && $points < $maxPoints) {
