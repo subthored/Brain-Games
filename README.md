@@ -9,3 +9,6 @@
 
 ### Asciinema of BrainCalc game:
 [![asciicast](https://asciinema.org/a/jiMVBBK66wpbAQYR2tGs6MqeB.svg)](https://asciinema.org/a/jiMVBBK66wpbAQYR2tGs6MqeB)
+
+### Asciinema of BrainGcd game:
+[![asciicast](https://asciinema.org/a/qAgrcsbwRNhzN4cYiDUH4ZoZy.svg)](https://asciinema.org/a/qAgrcsbwRNhzN4cYiDUH4ZoZy)
