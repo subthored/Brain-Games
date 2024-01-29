@@ -11,7 +11,8 @@
             "src/Cli.php",
             "src/Engine.php",
             "src/Games-logic/brain-even-logic.php",
-            "src/Games-logic/brain-calc-logic.php"
+            "src/Games-logic/brain-calc-logic.php",
+            "src/Games-logic/brain-divider.php"
         ]
     },
     "authors": [
@@ -25,7 +26,9 @@
     },
     "bin": [
     	"bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc",
+        "bin/brain-gcd"
     ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.8"
