@@ -17,7 +17,15 @@ function gameGreeting($game)
         line("Welcome to the Brain Games!");
         $name = prompt("May I have your name?");
         line("Hello, %s!", $name);
-        line("\nWhat is the result of the expression?");
+        line("What is the result of the expression?\n");
+        return $name;
+    }
+
+    if ($game === "divider") {
+        line("Welcome to the Brain Games!");
+        $name = prompt("May I have your name?");
+        line("Hello, %s!", $name);
+        line("Find the greatest common divisor of given numbers?\n");
         return $name;
     }
 }
@@ -36,4 +44,23 @@ function compareAnswers($userAnswer, $correctAnswer, $name)
     } else {
         return true;
     }
+}
+
+function gcd($firstNumber, $secondNumber)
+{
+    if ($firstNumber > $secondNumber) {
+        $b = $firstNumber;
+        $a = $secondNumber;
+    } else {
+        $a = $firstNumber;
+        $b = $secondNumber;
+    }
+
+    while ($b !== 0) {
+        $temp = $b;
+        $b = $a % $b;
+        $a = $temp;
+    }
+
+    return $a;
 }
