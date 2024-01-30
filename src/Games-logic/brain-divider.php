@@ -6,12 +6,11 @@ use function cli\prompt;
 function divider()
 {
     $points = 0;
-    $maxPoints = 3;
     $isUserCorrect = true;
 
     $name = gameGreeting("divider");
 
-    while ($isUserCorrect && $points < $maxPoints) {
+    while ($isUserCorrect && $points < 3) {
         $firstNumber = random_int(1, 100);
         $secondNumber = random_int(1, 100);
         $correctAnswer = gcd($firstNumber, $secondNumber);
@@ -24,7 +23,7 @@ function divider()
             $points++;
         }
 
-        if ($points === $maxPoints) {
+        if ($points === 3) {
             line("Congratulations, %s!", $name);
         }
     }
