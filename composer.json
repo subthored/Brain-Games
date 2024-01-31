@@ -12,7 +12,8 @@
             "src/Engine.php",
             "src/Games-logic/brain-even-logic.php",
             "src/Games-logic/brain-calc-logic.php",
-            "src/Games-logic/brain-divider.php"
+            "src/Games-logic/brain-divider-logic.php",
+            "src/Games-logic/brain-progression-logic.php"
         ]
     },
     "authors": [
