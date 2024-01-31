@@ -12,3 +12,6 @@
 
 ### Asciinema of BrainGcd game:
 [![asciicast](https://asciinema.org/a/qAgrcsbwRNhzN4cYiDUH4ZoZy.svg)](https://asciinema.org/a/qAgrcsbwRNhzN4cYiDUH4ZoZy)
+
+### Asciinema of BrainProgression game:
+[![asciicast](https://asciinema.org/a/z6OtYoqKGiERnJHdqlIeIPoLu.svg)](https://asciinema.org/a/z6OtYoqKGiERnJHdqlIeIPoLu)
