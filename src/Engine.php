@@ -40,7 +40,7 @@ function calculationLogic(int $expression, int $firstNumber, int $secondNumber)
     return $correctAnswer;
 }
 
-function compareAnswers(int $userAnswer, int $correctAnswer, string $name)
+function compareAnswers($userAnswer, $correctAnswer, $name)
 {
     if ($userAnswer == 0) {
         line("\nYou must type integer number!");
