@@ -3,7 +3,7 @@
 use function cli\line;
 use function cli\prompt;
 
-function gameGreeting($game)
+function gameGreeting(string $game)
 {
     line("Welcome to the Brain Games!");
     $name = prompt("May I have your name?");
@@ -24,7 +24,7 @@ function gameGreeting($game)
     return $name;
 }
 
-function calculationLogic($expression, $firstNumber, $secondNumber)
+function calculationLogic(int $expression, int $firstNumber, int $secondNumber)
 {
     if ($expression === 1) {
         $correctAnswer = $firstNumber + $secondNumber;
@@ -40,7 +40,7 @@ function calculationLogic($expression, $firstNumber, $secondNumber)
     return $correctAnswer;
 }
 
-function compareAnswers($userAnswer, $correctAnswer, $name)
+function compareAnswers(int $userAnswer, int $correctAnswer, string $name)
 {
     if ($userAnswer == 0) {
         line("\nYou must type integer number!");
@@ -56,7 +56,7 @@ function compareAnswers($userAnswer, $correctAnswer, $name)
     }
 }
 
-function gcd($firstNumber, $secondNumber)
+function gcd(int $firstNumber, int $secondNumber)
 {
     if ($firstNumber > $secondNumber) {
         $b = $firstNumber;
@@ -75,7 +75,7 @@ function gcd($firstNumber, $secondNumber)
     return $a;
 }
 
-function generatingProgression($firstNumber, $step, $length)
+function generatingProgression(int $firstNumber, int $step, int $length)
 {
     $progression = [];
     for ($i = 0; $i < $length; $i++) {
@@ -84,7 +84,7 @@ function generatingProgression($firstNumber, $step, $length)
     return $progression;
 }
 
-function isNumberPrime($number)
+function isNumberPrime(int $number)
 {
     if ($number < 2) {
         return 'no';
