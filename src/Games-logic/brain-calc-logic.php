@@ -18,7 +18,7 @@ function calcGame()
 
         $correctAnswer = (string) calculationLogic($expression, $firstNumber, $secondNumber);
 
-        $userAnswer = (string) prompt("Your answer");
+        $userAnswer = prompt("Your answer");
         $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
 
         if ($isUserCorrect) {

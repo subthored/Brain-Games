@@ -15,7 +15,7 @@ function divider()
         $secondNumber = random_int(1, 100);
         $correctAnswer = (string) gcd($firstNumber, $secondNumber);
         line("Question: {$firstNumber} {$secondNumber}");
-        $userAnswer = (string) prompt("Your answer");
+        $userAnswer = prompt("Your answer");
         $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
 
         if ($isUserCorrect) {

@@ -16,7 +16,7 @@ function progression()
         $length = 10;
         $progression = generatingProgression($firstNumber, $step, $length);
         $hiddenNumberIndex = random_int(0, $length - 1);
-        $correctAnswer = (string) $progression[$hiddenNumberIndex];
+        $correctAnswer = $progression[$hiddenNumberIndex];
         $progression[$hiddenNumberIndex] = '..';
         line("Question: %s", implode(' ', $progression));
 

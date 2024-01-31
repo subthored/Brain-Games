@@ -40,7 +40,7 @@ function calculationLogic(int $expression, int $firstNumber, int $secondNumber)
     return $correctAnswer;
 }
 
-function compareAnswers(string $userAnswer, string $correctAnswer, $name)
+function compareAnswers(string $userAnswer, string $correctAnswer, string $name)
 {
     if ($userAnswer !== $correctAnswer) {
         line("'%s' is wrong answer :( Correct answer was '%s'.", $userAnswer, $correctAnswer);
