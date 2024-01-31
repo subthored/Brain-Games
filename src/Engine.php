@@ -26,6 +26,7 @@ function gameGreeting(string $game)
 
 function calculationLogic(int $expression, int $firstNumber, int $secondNumber)
 {
+    $correctAnswer = 0;
     if ($expression === 1) {
         $correctAnswer = $firstNumber + $secondNumber;
         $expression = "+";

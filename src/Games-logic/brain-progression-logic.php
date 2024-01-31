@@ -20,7 +20,7 @@ function progression()
         $progression[$hiddenNumberIndex] = '..';
         line("Question: %s", implode(' ', $progression));
 
-        $userAnswer = (string) prompt('Your answer');
+        $userAnswer = prompt('Your answer');
         $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
 
         if ($isUserCorrect) {
