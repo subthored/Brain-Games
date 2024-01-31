@@ -9,22 +9,16 @@ function gameGreeting($game)
     $name = prompt("May I have your name?");
     line("Hello, %s!", $name);
 
-    switch ($game) {
-        case "even":
-            line("Answer 'yes' if the number is even, otherwise answer 'no'.\n");
-            break;
-        case "calc":
-            line("What is the result of the expression?\n");
-            break;
-        case "divider":
-            line("Find the greatest common divisor of given numbers?\n");
-            break;
-        case "progression":
-            line("What number is missing in the progression?\n");
-            break;
-        case "prime":
-            line("Answer 'yes' if given number is prime. Otherwise answer 'no'.\n");
-            break;
+    if ($game === "even") {
+        line("Answer 'yes' if the number is even, otherwise answer 'no'.\n");
+    } elseif ($game === "calc") {
+        line("What is the result of the expression?\n");
+    } elseif ($game === "divider") {
+        line("Find the greatest common divisor of given numbers?\n");
+    } elseif ($game === "progression") {
+        line("What number is missing in the progression?\n");
+    } elseif ($game === "prime") {
+        line("Answer 'yes' if given number is prime. Otherwise answer 'no'.\n");
     }
 
     return $name;
