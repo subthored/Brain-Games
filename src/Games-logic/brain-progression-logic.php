@@ -13,9 +13,9 @@ function progression()
     while ($isUserCorrect && $points < 3) {
         $firstNumber = random_int(1, 10);
         $step = random_int(2, 5);
-        $length = random_int(5, 10);
+        $length = 10;
         $progression = generatingProgression($firstNumber, $step, $length);
-        $hiddenNumberIndex = random_int(0, count($progression) - 1);
+        $hiddenNumberIndex = random_int(0, $length - 1);
         $correctAnswer = $progression[$hiddenNumberIndex];
         $progression[$hiddenNumberIndex] = '..';
         line("Question: %s", implode(' ', $progression));
