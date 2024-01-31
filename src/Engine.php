@@ -36,6 +36,14 @@ function gameGreeting($game)
         line("What number is missing in the progression?\n");
         return $name;
     }
+
+    if ($game === "prime") {
+        line("Welcome to the Brain Games!");
+        $name = prompt("May I have your name?");
+        line("Hello, %s!", $name);
+        line("Answer 'yes' if given number is prime. Otherwise answer 'no'.\n");
+        return $name;
+    }
 }
 
 function compareAnswers($userAnswer, $correctAnswer, $name)
@@ -80,4 +88,19 @@ function generatingProgression($firstNumber, $step, $length)
         $progression[] = $firstNumber + $i * $step;
     }
     return $progression;
+}
+
+function isNumberPrime($number)
+{
+    if ($number < 2) {
+        return 'no';
+    }
+
+    for ($i = 2; $i <= sqrt($number); $i++) {
+        if ($number % $i === 0) {
+            return 'no';
+        }
+    }
+
+    return 'yes';
 }
