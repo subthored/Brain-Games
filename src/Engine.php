@@ -10,7 +10,7 @@ function gameGreeting($game)
     line("Hello, %s!", $name);
 
     if ($game === "even") {
-        line("Answer 'yes' if the number is even, otherwise answer 'no'.\n");
+        line("Answer \"yes\" if the number is even, otherwise answer \"no\".\n");
     } elseif ($game === "calc") {
         line("What is the result of the expression?\n");
     } elseif ($game === "divider") {
@@ -18,7 +18,7 @@ function gameGreeting($game)
     } elseif ($game === "progression") {
         line("What number is missing in the progression?\n");
     } elseif ($game === "prime") {
-        line("Answer 'yes' if given number is prime. Otherwise answer 'no'.\n");
+        line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n");
     }
 
     return $name;
