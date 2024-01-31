@@ -40,13 +40,8 @@ function calculationLogic(int $expression, int $firstNumber, int $secondNumber)
     return $correctAnswer;
 }
 
-function compareAnswers($userAnswer, $correctAnswer, $name)
+function compareAnswers(string $userAnswer, string $correctAnswer, $name)
 {
-    if ($userAnswer == 0) {
-        line("\nYou must type integer number!");
-        line("Let's try again, %s", $name);
-        return false;
-    }
     if ($userAnswer !== $correctAnswer) {
         line("'%s' is wrong answer :( Correct answer was '%s'.", $userAnswer, $correctAnswer);
         line("\nLet's try again, %s!", $name);

@@ -16,11 +16,11 @@ function progression()
         $length = 10;
         $progression = generatingProgression($firstNumber, $step, $length);
         $hiddenNumberIndex = random_int(0, $length - 1);
-        $correctAnswer = $progression[$hiddenNumberIndex];
+        $correctAnswer = (string) $progression[$hiddenNumberIndex];
         $progression[$hiddenNumberIndex] = '..';
         line("Question: %s", implode(' ', $progression));
 
-        $userAnswer = (int)prompt('Your answer');
+        $userAnswer = (string) prompt('Your answer');
         $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
 
         if ($isUserCorrect) {

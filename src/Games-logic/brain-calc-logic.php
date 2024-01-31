@@ -16,9 +16,9 @@ function calcGame()
         $firstNumber = random_int(1, 50);
         $secondNumber = ($expression === 3) ? random_int(1, 10) : random_int(1, 50);
 
-        $correctAnswer = calculationLogic($expression, $firstNumber, $secondNumber);
+        $correctAnswer = (string) calculationLogic($expression, $firstNumber, $secondNumber);
 
-        $userAnswer = (int)prompt("Your answer");
+        $userAnswer = (string) prompt("Your answer");
         $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
 
         if ($isUserCorrect) {

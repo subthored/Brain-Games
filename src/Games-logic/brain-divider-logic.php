@@ -13,9 +13,9 @@ function divider()
     while ($isUserCorrect && $points < 3) {
         $firstNumber = random_int(1, 100);
         $secondNumber = random_int(1, 100);
-        $correctAnswer = gcd($firstNumber, $secondNumber);
+        $correctAnswer = (string) gcd($firstNumber, $secondNumber);
         line("Question: {$firstNumber} {$secondNumber}");
-        $userAnswer = (int)prompt("Your answer");
+        $userAnswer = (string) prompt("Your answer");
         $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
 
         if ($isUserCorrect) {
