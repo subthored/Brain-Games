@@ -16,24 +16,7 @@ function calcGame()
         $firstNumber = random_int(1, 50);
         $secondNumber = ($expression === 3) ? random_int(1, 10) : random_int(1, 50);
 
-        switch ($expression) {
-            case 1:
-                $correctAnswer = $firstNumber + $secondNumber;
-                $expression = "+";
-                break;
-            case 2:
-                $correctAnswer = $firstNumber - $secondNumber;
-                $expression = "-";
-                break;
-            case 3:
-                $correctAnswer = $firstNumber * $secondNumber;
-                $expression = "*";
-                break;
-            default:
-                break;
-        }
-
-        line("Question: %s %s %s", $firstNumber, $expression, $secondNumber);
+        $correctAnswer = calculationLogic($expression, $firstNumber, $secondNumber);
 
         $userAnswer = (int)prompt("Your answer");
         $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
