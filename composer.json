@@ -13,7 +13,8 @@
             "src/Games-logic/brain-even-logic.php",
             "src/Games-logic/brain-calc-logic.php",
             "src/Games-logic/brain-divider-logic.php",
-            "src/Games-logic/brain-progression-logic.php"
+            "src/Games-logic/brain-progression-logic.php",
+            "src/Games-logic/brain-prime-logic.php"
         ]
     },
     "authors": [
