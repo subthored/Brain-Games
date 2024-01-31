@@ -28,6 +28,14 @@ function gameGreeting($game)
         line("Find the greatest common divisor of given numbers?\n");
         return $name;
     }
+
+    if ($game === "progression") {
+        line("Welcome to the Brain Games!");
+        $name = prompt("May I have your name?");
+        line("Hello, %s!", $name);
+        line("What number is missing in the progression?\n");
+        return $name;
+    }
 }
 
 function compareAnswers($userAnswer, $correctAnswer, $name)
@@ -63,4 +71,13 @@ function gcd($firstNumber, $secondNumber)
     }
 
     return $a;
+}
+
+function generatingProgression($firstNumber, $step, $length)
+{
+    $progression = [];
+    for ($i = 0; $i < $length; $i++) {
+        $progression[] = $firstNumber + $i * $step;
+    }
+    return $progression;
 }
