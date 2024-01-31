@@ -24,6 +24,22 @@ function gameGreeting($game)
     return $name;
 }
 
+function calculationLogic($expression, $firstNumber, $secondNumber)
+{
+    if ($expression === 1) {
+        $correctAnswer = $firstNumber + $secondNumber;
+        $expression = "+";
+    } elseif ($expression === 2) {
+        $correctAnswer = $firstNumber - $secondNumber;
+        $expression = "-";
+    } elseif ($expression === 3) {
+        $correctAnswer = $firstNumber * $secondNumber;
+        $expression = "*";
+    }
+    line("Question: %s %s %s", $firstNumber, $expression, $secondNumber);
+    return $correctAnswer;
+}
+
 function compareAnswers($userAnswer, $correctAnswer, $name)
 {
     if ($userAnswer == 0) {
