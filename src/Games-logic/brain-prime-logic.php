@@ -13,7 +13,8 @@ function prime()
     while ($isUserCorrect && $points < 3) {
         $number = random_int(0, 100);
         $correctAnswer = isNumberPrime($number);
-        line("Question %s", $number);
+        line("Question: %s", $number);
+
         $userAnswer = prompt('Your answer');
         $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
 
