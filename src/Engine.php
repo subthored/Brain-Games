@@ -24,23 +24,6 @@ function gameGreeting(string $game)
     return $name;
 }
 
-function calculationLogic(int $expression, int $firstNumber, int $secondNumber)
-{
-    $correctAnswer = 0;
-    if ($expression === 1) {
-        $correctAnswer = $firstNumber + $secondNumber;
-        $expression = "+";
-    } elseif ($expression === 2) {
-        $correctAnswer = $firstNumber - $secondNumber;
-        $expression = "-";
-    } elseif ($expression === 3) {
-        $correctAnswer = $firstNumber * $secondNumber;
-        $expression = "*";
-    }
-    line("Question: %s %s %s", $firstNumber, $expression, $secondNumber);
-    return $correctAnswer;
-}
-
 function compareAnswers(string $userAnswer, string $correctAnswer, string $name)
 {
     if ($userAnswer !== $correctAnswer) {
@@ -52,45 +35,39 @@ function compareAnswers(string $userAnswer, string $correctAnswer, string $name)
     }
 }
 
-function gcd(int $firstNumber, int $secondNumber)
+function gameLaunch(string $game)
 {
-    if ($firstNumber > $secondNumber) {
-        $b = $firstNumber;
-        $a = $secondNumber;
-    } else {
-        $a = $firstNumber;
-        $b = $secondNumber;
+    if ($game === "calc") {
+        calcGame();
+    } elseif ($game === "even") {
+        evenGame();
+    } elseif ($game === "divider") {
+        divider();
+    } elseif ($game === "progression") {
+        progression();
+    } elseif ($game === "prime") {
+        prime();
     }
-
-    while ($b !== 0) {
-        $temp = $b;
-        $b = $a % $b;
-        $a = $temp;
-    }
-
-    return $a;
 }
 
-function generatingProgression(int $firstNumber, int $step, int $length)
+function isUserCorrect($correctAnswer, $name)
 {
-    $progression = [];
-    for ($i = 0; $i < $length; $i++) {
-        $progression[] = $firstNumber + $i * $step;
-    }
-    return $progression;
+    $userAnswer = prompt('Your answer');
+    $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
+    return $isUserCorrect;
 }
 
-function isNumberPrime(int $number)
+function pointTracker($isUserCorrect, $points, $name)
 {
-    if ($number < 2) {
-        return 'no';
+    if ($isUserCorrect && $points < 2) {
+        line("Correct!\n");
+        $points++;
+        return $points;
     }
 
-    for ($i = 2; $i <= sqrt($number); $i++) {
-        if ($number % $i === 0) {
-            return 'no';
-        }
+    if ($isUserCorrect && $points == 2) {
+        line("Congratulations, %s!", $name);
+        $points++;
+        return $points;
     }
-
-    return 'yes';
 }
