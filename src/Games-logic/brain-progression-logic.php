@@ -1,7 +1,15 @@
 <?php
 
 use function cli\line;
-use function cli\prompt;
+
+function generatingProgression(int $firstNumber, int $step, int $length)
+{
+    $progression = [];
+    for ($i = 0; $i < $length; $i++) {
+        $progression[] = $firstNumber + $i * $step;
+    }
+    return $progression;
+}
 
 function progression()
 {
@@ -19,17 +27,7 @@ function progression()
         $correctAnswer = $progression[$hiddenNumberIndex];
         $progression[$hiddenNumberIndex] = '..';
         line("Question: %s", implode(' ', $progression));
-
-        $userAnswer = prompt('Your answer');
-        $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
-
-        if ($isUserCorrect) {
-            line("Correct!\n");
-            $points++;
-        }
-
-        if ($points === 3) {
-            line("Congratulations, %s!", $name);
-        }
+        $isUserCorrect = isUserCorrect($correctAnswer, $name);
+        $points = pointTracker($isUserCorrect, $points, $name);
     }
 }

@@ -1,7 +1,21 @@
 <?php
 
 use function cli\line;
-use function cli\prompt;
+
+function isNumberPrime(int $number)
+{
+    if ($number < 2) {
+        return 'no';
+    }
+
+    for ($i = 2; $i <= sqrt($number); $i++) {
+        if ($number % $i === 0) {
+            return 'no';
+        }
+    }
+
+    return 'yes';
+}
 
 function prime()
 {
@@ -14,17 +28,7 @@ function prime()
         $number = random_int(0, 100);
         $correctAnswer = isNumberPrime($number);
         line("Question: %s", $number);
-
-        $userAnswer = prompt('Your answer');
-        $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
-
-        if ($isUserCorrect) {
-            line("Correct!\n");
-            $points++;
-        }
-
-        if ($points === 3) {
-            line("Congratulations, %s!", $name);
-        }
+        $isUserCorrect = isUserCorrect($correctAnswer, $name);
+        $points = pointTracker($isUserCorrect, $points, $name);
     }
 }

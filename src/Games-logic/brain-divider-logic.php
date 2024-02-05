@@ -1,7 +1,25 @@
 <?php
 
 use function cli\line;
-use function cli\prompt;
+
+function gcd(int $firstNumber, int $secondNumber)
+{
+    if ($firstNumber > $secondNumber) {
+        $b = $firstNumber;
+        $a = $secondNumber;
+    } else {
+        $a = $firstNumber;
+        $b = $secondNumber;
+    }
+
+    while ($b !== 0) {
+        $temp = $b;
+        $b = $a % $b;
+        $a = $temp;
+    }
+
+    return $a;
+}
 
 function divider()
 {
@@ -15,16 +33,7 @@ function divider()
         $secondNumber = random_int(1, 100);
         $correctAnswer = (string) gcd($firstNumber, $secondNumber);
         line("Question: {$firstNumber} {$secondNumber}");
-        $userAnswer = prompt("Your answer");
-        $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
-
-        if ($isUserCorrect) {
-            line("Correct!\n");
-            $points++;
-        }
-
-        if ($points === 3) {
-            line("Congratulations, %s!", $name);
-        }
+        $isUserCorrect = isUserCorrect($correctAnswer, $name);
+        $points = pointTracker($isUserCorrect, $points, $name);
     }
 }
