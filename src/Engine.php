@@ -50,14 +50,14 @@ function gameLaunch(string $game)
     }
 }
 
-function isUserCorrect($correctAnswer, $name)
+function isUserCorrect(string $correctAnswer, string $name)
 {
     $userAnswer = prompt('Your answer');
     $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
     return $isUserCorrect;
 }
 
-function pointTracker($isUserCorrect, $points, $name)
+function pointTracker(bool $isUserCorrect, int $points, string $name)
 {
     if ($isUserCorrect && $points < 2) {
         line("Correct!\n");
