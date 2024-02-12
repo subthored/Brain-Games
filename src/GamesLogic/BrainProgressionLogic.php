@@ -16,7 +16,8 @@ function progression()
     $points = 0;
     $isUserCorrect = true;
 
-    $name = gameGreeting("progression");
+    $name = gameGreeting();
+    line("What number is missing in the progression?\n");
 
     while ($isUserCorrect && $points < 3) {
         $firstNumber = random_int(1, 10);

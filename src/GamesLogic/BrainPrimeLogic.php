@@ -22,7 +22,8 @@ function prime()
     $points = 0;
     $isUserCorrect = true;
 
-    $name = gameGreeting("prime");
+    $name = gameGreeting();
+    line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n");
 
     while ($isUserCorrect && $points < 3) {
         $number = random_int(0, 100);

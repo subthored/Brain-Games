@@ -7,7 +7,8 @@ function evenGame()
     $points = 0;
     $isUserCorrect = true;
 
-    $name = gameGreeting("even");
+    $name = gameGreeting();
+    line("Answer \"yes\" if the number is even, otherwise answer \"no\".\n");
 
     while ($isUserCorrect && $points < 3) {
         $number = random_int(1, 100);

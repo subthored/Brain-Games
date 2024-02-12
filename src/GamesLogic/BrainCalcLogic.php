@@ -1,20 +1,16 @@
 <?php
 
 use function cli\line;
-use function cli\prompt;
 
-function calculationLogic(int $expression, int $firstNumber, int $secondNumber)
+function calculationLogic(string $expression, int $firstNumber, int $secondNumber)
 {
     $correctAnswer = 0;
-    if ($expression === 1) {
+    if ($expression === "+") {
         $correctAnswer = $firstNumber + $secondNumber;
-        $expression = "+";
-    } elseif ($expression === 2) {
+    } elseif ($expression === "-") {
         $correctAnswer = $firstNumber - $secondNumber;
-        $expression = "-";
-    } elseif ($expression === 3) {
+    } elseif ($expression === "*") {
         $correctAnswer = $firstNumber * $secondNumber;
-        $expression = "*";
     }
     line("Question: %s %s %s", $firstNumber, $expression, $secondNumber);
     return $correctAnswer;
@@ -25,13 +21,16 @@ function calcGame()
     $points = 0;
     $maxPoints = 3;
     $isUserCorrect = true;
+    $expressionArray = ["+", "-", "*"];
 
-    $name = gameGreeting("calc");
+    $name = gameGreeting();
+    line("What is the result of the expression?\n");
 
     while ($isUserCorrect && $points < $maxPoints) {
-        $expression = random_int(1, 3);
+        $randomKey = array_rand($expressionArray, 1);
+        $expression = $expressionArray[$randomKey];
         $firstNumber = random_int(1, 50);
-        $secondNumber = ($expression === 3) ? random_int(1, 10) : random_int(1, 50);
+        $secondNumber = ($expression === "*") ? random_int(1, 10) : random_int(1, 50);
 
         $correctAnswer = (string) calculationLogic($expression, $firstNumber, $secondNumber);
         $isUserCorrect = isUserCorrect($correctAnswer, $name);
