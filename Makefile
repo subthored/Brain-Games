@@ -2,7 +2,7 @@ install:
 	composer install
 
 brain-games:
-	./bin/BrainGames
+	./bin/brain-games
 
 brain-even:
 	./bin/BrainEven
