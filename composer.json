@@ -7,11 +7,11 @@
         "files": [
             "src/Cli.php",
             "src/Engine.php",
-            "src/Games-logic/brain-even-logic.php",
-            "src/Games-logic/brain-calc-logic.php",
-            "src/Games-logic/brain-divider-logic.php",
-            "src/Games-logic/brain-progression-logic.php",
-            "src/Games-logic/brain-prime-logic.php"
+            "src/GamesLogic/BrainEvenLogic.php",
+            "src/GamesLogic/BrainCalcLogic.php",
+            "src/GamesLogic/BrainDividerLogic.php",
+            "src/GamesLogic/BrainProgressionLogic.php",
+            "src/GamesLogic/BrainPrimeLogic.php"
         ]
     },
     "authors": [
@@ -24,12 +24,12 @@
         "wp-cli/php-cli-tools": "^0.11.22"
     },
     "bin": [
-    	"bin/brain-games",
-        "bin/brain-even",
-        "bin/brain-calc",
-        "bin/brain-gcd",
-        "bin/brain-prime",
-        "bin/brain-progression"
+    	"bin/BrainGames",
+        "bin/BrainEven",
+        "bin/BrainCalc",
+        "bin/BrainGcd",
+        "bin/BrainPrime",
+        "bin/BrainProgression"
     ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.8"

@@ -2,22 +2,22 @@ install:
 	composer install
 
 brain-games:
-	./bin/brain-games
+	./bin/BrainGames
 
 brain-even:
-	./bin/brain-even
+	./bin/BrainEven
 
 brain-calc:
-	./bin/brain-calc
+	./bin/BrainCalc
 
 brain-gcd:
-	./bin/brain-gcd
+	./bin/BrainGcd
 
 brain-progression:
-	./bin/brain-progression
+	./bin/BrainProgression
 
 brain-prime:
-	./bin/brain-prime
+	./bin/BrainPrime
 
 validate:
 	composer validate
