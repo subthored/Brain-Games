@@ -3,23 +3,11 @@
 use function cli\line;
 use function cli\prompt;
 
-function gameGreeting(string $game)
+function gameGreeting()
 {
     line("Welcome to the Brain Games!");
     $name = prompt("May I have your name?");
     line("Hello, %s!", $name);
-
-    if ($game === "even") {
-        line("Answer \"yes\" if the number is even, otherwise answer \"no\".\n");
-    } elseif ($game === "calc") {
-        line("What is the result of the expression?\n");
-    } elseif ($game === "divider") {
-        line("Find the greatest common divisor of given numbers?\n");
-    } elseif ($game === "progression") {
-        line("What number is missing in the progression?\n");
-    } elseif ($game === "prime") {
-        line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n");
-    }
 
     return $name;
 }
