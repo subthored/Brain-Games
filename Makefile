@@ -5,19 +5,19 @@ brain-games:
 	./bin/brain-games
 
 brain-even:
-	./bin/BrainEven
+	./bin/brain-even
 
 brain-calc:
-	./bin/BrainCalc
+	./bin/brain-calc
 
 brain-gcd:
-	./bin/BrainGcd
+	./bin/brain-gcd
 
 brain-progression:
-	./bin/BrainProgression
+	./bin/brain-progression
 
 brain-prime:
-	./bin/BrainPrime
+	./bin/brain-prime
 
 validate:
 	composer validate
