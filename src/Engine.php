@@ -3,46 +3,39 @@
 use function cli\line;
 use function cli\prompt;
 
-function gameGreeting()
+const MAX_POINTS = 3;
+
+function gameGreeting(string $gameName)
 {
     line("Welcome to the Brain Games!");
     $name = prompt("May I have your name?");
-    line("Hello, %s!", $name);
+    line("\nHello, %s!", $name);
+
+    if ($gameName == 'calc') {
+        line(CALC_DESCR);
+    } elseif ($gameName == 'divider') {
+        line(DIV_DESCR);
+    } elseif ($gameName == 'even') {
+        line(EVEN_DESCR);
+    } elseif ($gameName == 'prime') {
+        line(PRIME_DESCR);
+    } elseif ($gameName == 'progress') {
+        line(PROGRESS_DESRCR);
+    }
 
     return $name;
 }
 
-function compareAnswers(string $userAnswer, string $correctAnswer, string $name)
+function compareAnswers(string $correctAnswer, string $name)
 {
+    $userAnswer = prompt('Your answer');
     if ($userAnswer !== $correctAnswer) {
         line("'%s' is wrong answer :( Correct answer was '%s'.", $userAnswer, $correctAnswer);
         line("\nLet's try again, %s!", $name);
-        return false;
+        exit();
     } else {
         return true;
     }
-}
-
-function gameLaunch(string $game)
-{
-    if ($game === "calc") {
-        calcGame();
-    } elseif ($game === "even") {
-        evenGame();
-    } elseif ($game === "divider") {
-        divider();
-    } elseif ($game === "progression") {
-        progression();
-    } elseif ($game === "prime") {
-        prime();
-    }
-}
-
-function isUserCorrect(string $correctAnswer, string $name)
-{
-    $userAnswer = prompt('Your answer');
-    $isUserCorrect = compareAnswers($userAnswer, $correctAnswer, $name);
-    return $isUserCorrect;
 }
 
 function pointTracker(bool $isUserCorrect, int $points, string $name)
@@ -58,4 +51,13 @@ function pointTracker(bool $isUserCorrect, int $points, string $name)
         $points++;
         return $points;
     }
+}
+
+function playGame(string $correctAnswer, string $question, int $points, string $name)
+{
+    $isUserCorrect = true;
+    line($question);
+    $isUserCorrect = compareAnswers($correctAnswer, $name);
+    $points = pointTracker($isUserCorrect, $points, $name);
+    return (int) $points;
 }

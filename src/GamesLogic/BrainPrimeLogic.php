@@ -1,6 +1,6 @@
 <?php
 
-use function cli\line;
+const PRIME_DESCR = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n";
 
 function isNumberPrime(int $number)
 {
@@ -20,16 +20,12 @@ function isNumberPrime(int $number)
 function prime()
 {
     $points = 0;
-    $isUserCorrect = true;
+    $name = gameGreeting('prime');
 
-    $name = gameGreeting();
-    line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n");
-
-    while ($isUserCorrect && $points < 3) {
+    while ($points != MAX_POINTS) {
         $number = random_int(0, 100);
         $correctAnswer = isNumberPrime($number);
-        line("Question: %s", $number);
-        $isUserCorrect = isUserCorrect($correctAnswer, $name);
-        $points = pointTracker($isUserCorrect, $points, $name);
+        $question = ("Question: {$number}");
+        $points = playGame($correctAnswer, $question, $points, $name);
     }
 }

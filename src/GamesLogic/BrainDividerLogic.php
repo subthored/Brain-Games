@@ -1,6 +1,6 @@
 <?php
 
-use function cli\line;
+const DIV_DESCR = "Find the greatest common divisor of given numbers?\n";
 
 function gcd(int $firstNumber, int $secondNumber)
 {
@@ -24,17 +24,13 @@ function gcd(int $firstNumber, int $secondNumber)
 function divider()
 {
     $points = 0;
-    $isUserCorrect = true;
+    $name = gameGreeting('divider');
 
-    $name = gameGreeting();
-    line("Find the greatest common divisor of given numbers?\n");
-
-    while ($isUserCorrect && $points < 3) {
+    while ($points != MAX_POINTS) {
         $firstNumber = random_int(1, 100);
         $secondNumber = random_int(1, 100);
         $correctAnswer = (string) gcd($firstNumber, $secondNumber);
-        line("Question: %s %s", $firstNumber, $secondNumber);
-        $isUserCorrect = isUserCorrect($correctAnswer, $name);
-        $points = pointTracker($isUserCorrect, $points, $name);
+        $question = ("Question: {$firstNumber} {$secondNumber}");
+        $points = playGame($correctAnswer, $question, $points, $name);
     }
 }
