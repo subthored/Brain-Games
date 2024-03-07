@@ -23,7 +23,7 @@ function playGame(array $questionAndAnswer, string $description)
         $userAnswer = prompt('Your answer');
         if ($questionAndAnswer[$i][1] != $userAnswer) {
             line("\"{$userAnswer}\" is wrong answer :( Correct answer was \"{$questionAndAnswer[$i][1]}\"");
-            line("\nLet's try again, {$name}");
+            line("\nLet's try again, {$name}!");
             exit();
         }
         if ($questionAndAnswer[$i][1] == $userAnswer) {
