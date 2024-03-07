@@ -23,14 +23,13 @@ function gcd(int $firstNumber, int $secondNumber)
 
 function divider()
 {
-    $points = 0;
-    $name = gameGreeting('divider');
-
-    while ($points != MAX_POINTS) {
+    for ($i = 0; $i < MAX_ROUNDS; $i += 1) {
         $firstNumber = random_int(1, 100);
         $secondNumber = random_int(1, 100);
         $correctAnswer = (string) gcd($firstNumber, $secondNumber);
         $question = ("Question: {$firstNumber} {$secondNumber}");
-        $points = playGame($correctAnswer, $question, $points, $name);
+        $questionAndAnswer[$i] = [$question, $correctAnswer];
     }
+
+    playGame($questionAndAnswer, DIV_DESCR);
 }

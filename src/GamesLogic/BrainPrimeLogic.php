@@ -19,13 +19,12 @@ function isNumberPrime(int $number)
 
 function prime()
 {
-    $points = 0;
-    $name = gameGreeting('prime');
-
-    while ($points != MAX_POINTS) {
+    for ($i = 0; $i < MAX_ROUNDS; $i += 1) {
         $number = random_int(0, 100);
         $correctAnswer = isNumberPrime($number);
         $question = ("Question: {$number}");
-        $points = playGame($correctAnswer, $question, $points, $name);
+        $questionAndAnswer[$i] = [$question, $correctAnswer];
     }
+
+    playGame($questionAndAnswer, PRIME_DESCR);
 }

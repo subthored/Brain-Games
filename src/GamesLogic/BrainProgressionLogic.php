@@ -1,6 +1,6 @@
 <?php
 
-const PROGRESS_DESRCR = "What number is missing in the progression?\n";
+const PROGRESS_DESCR = "What number is missing in the progression?\n";
 
 function generatingProgression(int $firstNumber, int $step, int $length)
 {
@@ -13,10 +13,7 @@ function generatingProgression(int $firstNumber, int $step, int $length)
 
 function progression()
 {
-    $points = 0;
-    $name = gameGreeting('progress');
-
-    while ($points != MAX_POINTS) {
+    for ($i = 0; $i < MAX_ROUNDS; $i += 1) {
         $firstNumber = random_int(1, 10);
         $step = random_int(2, 5);
         $length = 10;
@@ -26,6 +23,8 @@ function progression()
         $progression[$hiddenNumberIndex] = '..';
         $progressionString = implode(' ', $progression);
         $question = ("Question: {$progressionString}");
-        $points = playGame($correctAnswer, $question, $points, $name);
+        $questionAndAnswer[$i] = [$question, $correctAnswer];
     }
+
+    playGame($questionAndAnswer, PROGRESS_DESCR);
 }
