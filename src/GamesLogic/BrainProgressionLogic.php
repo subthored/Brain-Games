@@ -13,6 +13,8 @@ function generatingProgression(int $firstNumber, int $step, int $length)
 
 function progression()
 {
+    $questionAndAnswer = [];
+
     for ($i = 0; $i < MAX_ROUNDS; $i += 1) {
         $firstNumber = random_int(1, 10);
         $step = random_int(2, 5);

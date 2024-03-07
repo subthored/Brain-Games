@@ -23,6 +23,8 @@ function gcd(int $firstNumber, int $secondNumber)
 
 function divider()
 {
+    $questionAndAnswer = [];
+
     for ($i = 0; $i < MAX_ROUNDS; $i += 1) {
         $firstNumber = random_int(1, 100);
         $secondNumber = random_int(1, 100);

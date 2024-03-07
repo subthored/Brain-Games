@@ -19,6 +19,8 @@ function isNumberPrime(int $number)
 
 function prime()
 {
+    $questionAndAnswer = [];
+
     for ($i = 0; $i < MAX_ROUNDS; $i += 1) {
         $number = random_int(0, 100);
         $correctAnswer = isNumberPrime($number);
